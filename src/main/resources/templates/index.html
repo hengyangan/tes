@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Transit Electrification Simulation System</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/css/dashboard.css">
+s</head>
+<body>
+
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Transit Electrification Simulation System</a>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 col-md-2.6 sidebar">
+            <h4><span class="glyphicon glyphicon-list"></span> Select a bus module:</h4>
+<!--            <div class="dropdown">-->
+<!--                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"-->
+<!--                        aria-haspopup="true" aria-expanded="true">-->
+<!--                    Select bus-->
+<!--                    <span class="caret"></span>-->
+<!--                </button>-->
+<!--                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">-->
+<!--                    <li><a href="#">Action</a></li>-->
+<!--                    <li><a href="#">Another action</a></li>-->
+<!--                    <li><a href="#">Something else here</a></li>-->
+<!--                    <li role="separator" class="divider"></li>-->
+<!--                    <li><a href="#">Separated link</a></li>-->
+<!--                </ul>-->
+<!--            </div>-->
+<!--            <div class="dropdown">-->
+<!--                <ul class="dropdown-menu">-->
+<!--                    <li><a tabindex="-1" href="#">Action</a></li>-->
+<!--                    <li><a tabindex="-1" href="#">Another action</a></li>-->
+<!--                    <li><a tabindex="-1" href="#">Something else here</a></li>-->
+<!--                    <li class="divider"></li>-->
+<!--                    <li class="dropdown-submenu">-->
+<!--                        <a tabindex="-1" href="#">More options</a>-->
+<!--                        <ul class="dropdown-menu">-->
+<!--                            <li><a tabindex="-1" href="#">Second level link</a></li>-->
+<!--                            <li><a tabindex="-1" href="#">Second level link</a></li>-->
+<!--                            <li><a tabindex="-1" href="#">Second level link</a></li>-->
+<!--                            <li><a tabindex="-1" href="#">Second level link</a></li>-->
+<!--                            <li><a tabindex="-1" href="#">Second level link</a></li>-->
+<!--                        </ul>-->
+<!--                    </li>-->
+<!--                </ul>-->
+<!--            </div>-->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="menu-item dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">Drop Down<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li class="menu-item dropdown dropdown-submenu"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">Level 1</a>
+                                <ul class="dropdown-menu">
+                                    <li class="menu-item "> <a href="#">Link 1</a> </li>
+                                    <li class="menu-item dropdown dropdown-submenu"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">Level 2</a>
+                                        <ul class="dropdown-menu">
+                                            <li> <a href="#">Link 3</a> </li>
+                                        </ul> </li>
+                                </ul> </li>
+                        </ul> </li>
+                </ul>
+            </div>
+            <h4><span class="glyphicon glyphicon-list"></span> Select a charger module:</h4>
+            <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="true">
+                    Select charger
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                </ul>
+                <span><input class="btn btn-default" type="submit" value="Submit" style="float:right"></span>
+            </div>
+            <br>
+            <h4 class="page-header">Default configuration plan:</h4>
+            <h4><span>Number of buses:<input type="text" class="form-control" placeholder="10"
+                                             aria-describedby="basic-addon1"></span></h4>
+            <h4><span>Number of chargers:<input type="text" class="form-control" placeholder="10"
+                                                aria-describedby="basic-addon1"></span></h4>
+            <h4><span>Number of batteries:<input type="text" class="form-control" placeholder="10"
+                                                 aria-describedby="basic-addon1"></span></h4>
+            <h4><span>Number of locations:<input type="text" class="form-control" placeholder="10"
+                                                 aria-describedby="basic-addon1"></span></h4>
+            <span><input class="btn btn-default" type="submit" value="Update" style="float:right"></span>
+        </div>
+
+        <div class="col-sm-9 col-sm-offset-3 col-md-9.5 main">
+            <h2 class="sub-header">Schedule</h2>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>time</th>
+                        <th>Header</th>
+                        <th>Header</th>
+                        <th>Header</th>
+                        <th>Header</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>0 h</td>
+                        <td>Lorem</td>
+                        <td>ipsum</td>
+                        <td>dolor</td>
+                        <td>sit</td>
+                    </tr>
+                    <tr>
+                        <td>1 h</td>
+                        <td>amet</td>
+                        <td>consectetur</td>
+                        <td>adipiscing</td>
+                        <td>elit</td>
+                    </tr>
+                    <tr>
+                        <td>2 h</td>
+                        <td>Integer</td>
+                        <td>nec</td>
+                        <td>odio</td>
+                        <td>Praesent</td>
+                    </tr>
+                    <tr>
+                        <td>3 h</td>
+                        <td>libero</td>
+                        <td>Sed</td>
+                        <td>cursus</td>
+                        <td>ante</td>
+                    </tr>
+                    <tr>
+                        <td>4 h</td>
+                        <td>dapibus</td>
+                        <td>diam</td>
+                        <td>Sed</td>
+                        <td>nisi</td>
+                    </tr>
+                    <tr>
+                        <td>5 h</td>
+                        <td>Nulla</td>
+                        <td>quis</td>
+                        <td>sem</td>
+                        <td>at</td>
+                    </tr>
+                    <tr>
+                        <td>6 h</td>
+                        <td>nibh</td>
+                        <td>elementum</td>
+                        <td>imperdiet</td>
+                        <td>Duis</td>
+                    </tr>
+                    <tr>
+                        <td>7 h</td>
+                        <td>sagittis</td>
+                        <td>ipsum</td>
+                        <td>Praesent</td>
+                        <td>mauris</td>
+                    </tr>
+                    <tr>
+                        <td>8 h</td>
+                        <td>Fusce</td>
+                        <td>nec</td>
+                        <td>tellus</td>
+                        <td>sed</td>
+                    </tr>
+                    <tr>
+                        <td>9 h</td>
+                        <td>augue</td>
+                        <td>semper</td>
+                        <td>porta</td>
+                        <td>Mauris</td>
+                    </tr>
+                    <tr>
+                        <td>10 h</td>
+                        <td>massa</td>
+                        <td>Vestibulum</td>
+                        <td>lacinia</td>
+                        <td>arcu</td>
+                    </tr>
+                    <tr>
+                        <td>11 h</td>
+                        <td>eget</td>
+                        <td>nulla</td>
+                        <td>Class</td>
+                        <td>aptent</td>
+                    </tr>
+                    <tr>
+                        <td>12 h</td>
+                        <td>taciti</td>
+                        <td>sociosqu</td>
+                        <td>ad</td>
+                        <td>litora</td>
+                    </tr>
+                    <tr>
+                        <td>13 h</td>
+                        <td>torquent</td>
+                        <td>per</td>
+                        <td>conubia</td>
+                        <td>nostra</td>
+                    </tr>
+                    <tr>
+                        <td>14 h</td>
+                        <td>per</td>
+                        <td>inceptos</td>
+                        <td>himenaeos</td>
+                        <td>Curabitur</td>
+                    </tr>
+                    <tr>
+                        <td>15 h</td>
+                        <td>sodales</td>
+                        <td>ligula</td>
+                        <td>in</td>
+                        <td>libero</td>
+                    </tr>
+                    <tr>
+                        <td>16 h</td>
+                        <td>sodales</td>
+                        <td>ligula</td>
+                        <td>in</td>
+                        <td>libero</td>
+                    </tr>
+                    <tr>
+                        <td>17 h</td>
+                        <td>sodales</td>
+                        <td>ligula</td>
+                        <td>in</td>
+                        <td>libero</td>
+                    </tr>
+                    <tr>
+                        <td>18 h</td>
+                        <td>sodales</td>
+                        <td>ligula</td>
+                        <td>in</td>
+                        <td>libero</td>
+                    </tr>
+                    <tr>
+                        <td>19 h</td>
+                        <td>sodales</td>
+                        <td>ligula</td>
+                        <td>in</td>
+                        <td>libero</td>
+                    </tr>
+                    <tr>
+                        <td>20 h</td>
+                        <td>sodales</td>
+                        <td>ligula</td>
+                        <td>in</td>
+                        <td>libero</td>
+                    </tr>
+                    <tr>
+                        <td>15 h</td>
+                        <td>sodales</td>
+                        <td>ligula</td>
+                        <td>in</td>
+                        <td>libero</td>
+                    </tr>
+                    <tr>
+                        <td>21 h</td>
+                        <td>sodales</td>
+                        <td>ligula</td>
+                        <td>in</td>
+                        <td>libero</td>
+                    </tr>
+                    <tr>
+                        <td>22 h</td>
+                        <td>sodales</td>
+                        <td>ligula</td>
+                        <td>in</td>
+                        <td>libero</td>
+                    </tr>
+                    <tr>
+                        <td>23 h</td>
+                        <td>sodales</td>
+                        <td>ligula</td>
+                        <td>in</td>
+                        <td>libero</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="/js/jquery-3.4.1.min.js"></script>
+<script src="/js/bootstrap.min.js" type="application/javascript"></script>
+</html>
