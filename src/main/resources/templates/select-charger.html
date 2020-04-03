@@ -51,57 +51,203 @@
 <!--        <li><a href="#">ABB</a></li>-->
 <!--    </ul>-->
 <!--</div>-->
-<div class="checkbox " style="margin-left: 250px;zoom: 140%">
-    <label class="radio-inline ">
-        <input type="checkbox" style="zoom: 140%; margin-top: 7px"><h5>(Manufacture)HELIOX </h5>
-    </label>
-    <label class="radio-inline" style="margin-left: 110px">
-        <input type="checkbox" style="zoom: 140%; margin-top: 7px;padding-left: 0" disabled><h5>(Model)OC 450kW</h5>
-    </label>
-    <label class="radio-inline" style="padding-left: 0">
-        <input type="email" class="form-control " placeholder="Input your cost" disabled>
-    </label>
-    <label class="radio-inline" style="margin-left: 50px">
-        <input type="checkbox" style="zoom: 140%; margin-top: 7px " disabled><h5>(Model)FAST DC 50kW</h5>
-    </label>
-    <label class="radio-inline" style="padding-left: 0">
-        <input type="email" class="form-control" placeholder="Input your cost" disabled>
-    </label>
-</div>
-<br>
-<div class="checkbox" style="margin-left: 250px;zoom: 140%">
-    <label class="radio-inline">
-        <input type="checkbox" style="zoom: 140%; margin-top: 7px"><h5>(Manufacture)ABB </h5>
-    </label>
-    <label class="radio-inline" style="margin-left: 133px">
-        <input type="checkbox" style="zoom: 140%; margin-top: 7px;padding-left: 0" disabled><h5>(Model)HVC 300PD</h5>
-    </label>
-    <label class="radio-inline" style="padding-left: 0">
-        <input type="email" class="form-control" placeholder="Input your cost" disabled>
-    </label>
-    <label class="radio-inline" style="margin-left: 43px">
-        <input type="checkbox" style="zoom: 140%; margin-top: 7px " disabled><h5>(Model)HVC 100PU-S</h5>
-    </label>
-    <label class="radio-inline" style="padding-left: 0">
-        <input type="email" class="form-control" placeholder="Input your cost" disabled>
-    </label>
-</div>
-<h2 style="padding-left: 340px">Bus battery option: </h2>
-<br>
-<div class="checkbox" style="margin-left: 100px;zoom: 140%">
-    <label class="radio-inline" style="margin-left: 150px">
-        <input type="checkbox" style="zoom: 140%; margin-top: 7px;padding-left: 0"><h5>294 kWh</h5>
-    </label>
-    <label class="radio-inline" style="padding-left: 0">
-        <input type="email" class="form-control" placeholder="Input your unit cost">
-    </label>
-    <label class="radio-inline" style="margin-left: 150px">
-        <input type="checkbox" style="zoom: 140%; margin-top: 7px;padding-left: 0"><h5>(Model)394 kWh</h5>
-    </label>
-    <label class="radio-inline" style="padding-left: 0">
-        <input type="email" class="form-control" placeholder="Input your unit cost">
-    </label>
-    <input class="btn btn-default" type="submit" value="Commit" style="margin-left: 100px">
-</div>
+<form action="/index" method="post">
+    <div class="checkbox " style="margin-left: 250px;zoom: 140%">
+        <label class="radio-inline ">
+            <input type="checkbox" onclick="checkBoxH()" id="checkboxH" style="zoom: 140%; margin-top: 7px"><h5>
+            (Manufacture)HELIOX </h5>
+        </label>
+        <label class="radio-inline" style="margin-left: 110px">
+            <input type="checkbox" id="checkboxHOC" onclick="inHOC()"
+                   style="zoom: 140%; margin-top: 7px;padding-left: 0"
+                   disabled><h5>
+            (Model)OC 450kW</h5>
+        </label>
+        <label class="radio-inline" style="padding-left: 0">
+            <input type="number" class="form-control " id="inputHOC" name="modelHOCInput"
+                   placeholder="Input your unit cost" disabled>
+        </label>
+        <label class="radio-inline" style="margin-left: 50px">
+            <input type="checkbox" id="checkboxHON" style="zoom: 140%; margin-top: 7px " disabled><h5>(Model)FAST DC
+            50kW</h5>
+        </label>
+        <label class="radio-inline" style="padding-left: 0">
+            <input type="number" class="form-control" id="inputHON" name="modelHONInput"
+                   placeholder="Input your unit cost" disabled>
+        </label>
+    </div>
+    <br>
+    <div class="checkbox" style="margin-left: 250px;zoom: 140%">
+        <label class="radio-inline">
+            <input type="checkbox" onclick="checkBoxA()" id="checkboxA" style="zoom: 140%; margin-top: 7px"><h5>
+            (Manufacture)ABB </h5>
+        </label>
+        <label class="radio-inline" style="margin-left: 133px">
+            <input type="checkbox" id="checkboxAOC" style="zoom: 140%; margin-top: 7px;padding-left: 0" disabled><h5>
+            (Model)HVC 300PD</h5>
+        </label>
+        <label class="radio-inline" style="padding-left: 0">
+            <input type="number" class="form-control" id="inputAOC" name="modelAOCInput"
+                   placeholder="Input your unit cost" disabled>
+        </label>
+        <label class="radio-inline" style="margin-left: 43px">
+            <input type="checkbox" id="checkboxAON" style="zoom: 140%; margin-top: 7px " disabled><h5>(Model)HVC
+            100PU-S</h5>
+        </label>
+        <label class="radio-inline" style="padding-left: 0">
+            <input type="number" class="form-control" id="inputAON" name="modelAONInput"
+                   placeholder="Input your unit cost" disabled>
+        </label>
+    </div>
+    <h2 style="padding-left: 340px">Bus battery option: </h2>
+    <br>
+    <div class="checkbox" style="margin-left: 100px;zoom: 140%">
+        <label class="radio-inline" style="margin-left: 150px">
+            <input type="checkbox" id="cBox294" style="zoom: 140%; margin-top: 7px;padding-left: 0"><h5>(Model)294
+            kWh</h5>
+        </label>
+        <label class="radio-inline" style="padding-left: 0">
+            <input type="number" id="input294" class="form-control" name="smallBusInput"
+                   placeholder="Input your unit cost" disabled>
+        </label>
+        <label class="radio-inline" style="margin-left: 150px">
+            <input type="checkbox" id="cBox394" style="zoom: 140%; margin-top: 7px;padding-left: 0"><h5>(Model)394
+            kWh</h5>
+        </label>
+        <label class="radio-inline" style="padding-left: 0">
+            <input type="number" id="input394" class="form-control" name="bigBusInput"
+                   placeholder="Input your unit cost" disabled>
+        </label>
+        <button type="submit" class="btn btn-success btn-publish " style="margin-left: 100px">
+            submit
+        </button>
+    </div>
+</form>
+<script type="text/javascript">
+    var cBoxH = document.getElementById("checkboxH");
+    var cBoxA = document.getElementById("checkboxA");
+    var cBoxHOC = document.getElementById("checkboxHOC");
+    var cBoxAOC = document.getElementById("checkboxAOC");
+    var cBoxHON = document.getElementById("checkboxHON");
+    var cBoxAON = document.getElementById("checkboxAON");
+
+    function checkBoxH() {
+        if (cBoxH.checked) {
+            cBoxHOC.disabled = false;
+            cBoxHON.disabled = false;
+        } else {
+            cBoxHON.checked = false;
+            cBoxHOC.checked = false;
+            cBoxHON.disabled = true;
+            cBoxHOC.disabled = true;
+        }
+        if (cBoxA.checked) {
+            cBoxA.checked = false;
+            cBoxAON.checked = false;
+            cBoxAOC.checked = false;
+            cBoxAON.disabled = true;
+            cBoxAOC.disabled = true;
+        }
+    }
+
+    function checkBoxA() {
+        if (cBoxA.checked) {
+            cBoxAOC.disabled = false;
+            cBoxAON.disabled = false;
+        } else {
+            cBoxAON.checked = false;
+            cBoxAOC.checked = false;
+            cBoxAON.disabled = true;
+            cBoxAOC.disabled = true;
+        }
+        if (cBoxH.checked) {
+            cBoxH.checked = false;
+            cBoxHON.checked = false;
+            cBoxHOC.checked = false;
+            cBoxHON.disabled = true;
+            cBoxHOC.disabled = true;
+        }
+    }
+
+    // function inHOC() {
+    //     if (cBoxHOC.checked) {
+    //         document.getElementById("inputHOC").disabled = false;
+    //     } else {
+    //         $("#inputHON").val("");
+    //         document.getElementById("inputHOC").disabled = true;
+    //     }
+    // }
+    $("#checkboxHOC").click(function () {
+        if ($("#checkboxHOC").is(":checked")) {
+            $("#inputHOC").prop("disabled", false)
+        } else {
+            $("#inputHOC").val("");
+            $("#inputHOC").prop("disabled", true);
+        }
+    });
+
+    $("#checkboxHON").click(function () {
+        if ($("#checkboxHON").is(":checked")) {
+            $("#inputHON").prop("disabled", false)
+        } else {
+            $("#inputHON").val("");
+            $("#inputHON").prop("disabled", true);
+        }
+    });
+    $("#checkboxAON").click(function () {
+        if ($("#checkboxAON").is(":checked")) {
+            $("#inputAON").prop("disabled", false)
+        } else {
+            $("#inputAON").val("");
+            $("#inputAON").prop("disabled", true);
+        }
+    });
+    $("#checkboxAOC").click(function () {
+        if ($("#checkboxAOC").is(":checked")) {
+            $("#inputAOC").prop("disabled", false)
+        } else {
+            $("#inputAOC").val("");
+            $("#inputAOC").prop("disabled", true);
+        }
+    });
+    $("#cBox294").click(function () {
+        if ($("#cBox294").is(":checked")) {
+            $("#input294").prop("disabled", false);
+            $("#input294").val("")
+        } else {
+            $("#input294").prop("disabled", true);
+        }
+        if ($("#cBox394").is(":checked")) {
+            $("#input394").prop("disabled", true);
+            $("#input394").val("");
+            $("#cBox394").prop("checked", false);
+        }
+    });
+    $("#cBox394").click(function () {
+        if ($("#cBox394").is(":checked")) {
+            $("#input394").prop("disabled", false);
+        } else {
+            $("#input394").prop("disabled", true);
+        }
+        if ($("#cBox294").is(":checked")) {
+            $("#input294").prop("disabled", true);
+            $("#input294").val("");
+            $("#cBox294").prop("checked", false);
+        }
+    });
+    $("#checkboxA").click(function () {
+        $("#inputHOC").val("");
+        $("#inputHOC").prop("disabled",true);
+        $("#inputHON").val("");
+        $("#inputHON").prop("disabled",true);
+    });
+    $("#checkboxH").click(function () {
+        $("#inputAOC").val("");
+        $("#inputAOC").prop("disabled",true);
+        $("#inputAON").val("");
+        $("#inputAON").prop("disabled",true);
+    });
+
+</script>
 </body>
 </html>
