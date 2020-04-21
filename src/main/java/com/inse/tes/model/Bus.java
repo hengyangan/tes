@@ -7,10 +7,10 @@ import java.util.LinkedList;
 import java.util.List;
 
 @Data
-public class BigBus extends Bus{
+public class Bus {
     public Integer busID;
-    public String model = "Big size model";
-    public Integer size = 394;
+    public String model = "Small size model";
+    public Integer size;
     public String position;
     private LinkedList<Integer> atSoc = new LinkedList<>();
     private LinkedList<Integer> btSoc = new LinkedList<>();
@@ -21,9 +21,8 @@ public class BigBus extends Bus{
     private LinkedList<Integer> tripStartTime = new LinkedList<>();
     private LinkedList<Integer> tripEndTime = new LinkedList<>();
 //
-//    public BigBus(Integer busID,Integer leftSize){
+//    public Bus(Integer busID,Integer leftSize){
 //        this.busID = busID;
 //        this.leftSize.add(leftSize);
 //    }
-
 }
